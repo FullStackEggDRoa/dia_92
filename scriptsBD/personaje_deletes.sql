@@ -1,0 +1,1 @@
+DELETE FROM personajes WHERE id_personaje = 11;
