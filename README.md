@@ -20,7 +20,6 @@ Propiedades de Proyecto / Librerías / Class Path / Adicionar Proyecto (Add Proj
 3) Hecho.
 <br>
 ## Manos a la Obra - Página 22:
-
 ### Actividad 5
 <br> 
 a) Hecho [creador_inserts.sql]
@@ -30,5 +29,39 @@ a) Hecho [personajes_alters.sql]
 b) Hecho [personajes_deletes.sql]
 
 ### Actividad Extra
-
 Hecho - Cargado Ejecutado el script "nba".
+
+## Manos a la Obra - Página 30:
+### Actividad 6
+a) 
+b) Creo que el enunciado refiere a la tabla 'personajes'....
+´´´
+mysql> SELECT nombre_real FROM personajes;
++----------------+
+| nombre_real    |
++----------------+
+| Bruce Banner   |
+| Diana Prince   |
+| Tony Stark     |
+| Thor Odinson   |
+| Wanda Maximoff |
+| Carol Danvers  |
+| Thanos         |
+| Peter Parker   |
+| Steve Rogers   |
+| Bobby Drake    |
+| Burce Wayne    |
+| Clark Kent     |
++----------------+
+´´´
+c)
+´´´
+mysql> SELECT nombre_real FROM personajes WHERE nombre_real LIKE 'B%';
++--------------+
+| nombre_real  |
++--------------+
+| Bruce Banner |
+| Bobby Drake  |
+| Burce Wayne  |
++--------------+
+´´´
