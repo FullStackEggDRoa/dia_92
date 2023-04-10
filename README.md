@@ -33,9 +33,9 @@ Hecho - Cargado Ejecutado el script "nba".
 
 ## Manos a la Obra - Página 30:
 ### Actividad 6
-a) 
+a) Ok. Checked!!
 b) Creo que el enunciado refiere a la tabla 'personajes'....
-´´´
+```
 mysql> SELECT nombre_real FROM personajes;
 +----------------+
 | nombre_real    |
@@ -53,9 +53,9 @@ mysql> SELECT nombre_real FROM personajes;
 | Burce Wayne    |
 | Clark Kent     |
 +----------------+
-´´´
+```
 c)
-´´´
+```
 mysql> SELECT nombre_real FROM personajes WHERE nombre_real LIKE 'B%';
 +--------------+
 | nombre_real  |
@@ -64,4 +64,4 @@ mysql> SELECT nombre_real FROM personajes WHERE nombre_real LIKE 'B%';
 | Bobby Drake  |
 | Burce Wayne  |
 +--------------+
-´´´
+```
