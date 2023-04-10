@@ -153,8 +153,7 @@ SELECT * FROM empleados WHERE cargo_emp = "Secretaria";
 |    336 | Carolina Ríos  | F       | 1992-02-15 | 2000-10-01        | 1250000 |       500000 | Secretaria |     1500 |
 +--------+----------------+---------+------------+-------------------+---------+--------------+------------+----------+
 ```
-### 7. Obtener los datos de los empleados vendedores, ordenados por nombre
-alfabéticamente.
+### 7. Obtener los datos de los empleados vendedores, ordenados por nombre alfabéticamente.
 ```
 SELECT * FROM empleados WHERE cargo_emp = "Vendedor" ORDER BY nombre ASC;
 +--------+----------------+---------+------------+-------------------+---------+--------------+-----------+----------+
@@ -169,4 +168,85 @@ SELECT * FROM empleados WHERE cargo_emp = "Vendedor" ORDER BY nombre ASC;
 |    219 | Melissa Roa    | F       | 1960-06-19 | 2001-03-16        | 2250000 |      2500000 | Vendedor  |     2100 |
 |    333 | Pedro Blanco   | M       | 1987-10-28 | 2000-10-01        |  800000 |      3000000 | Vendedor  |     2000 |
 +--------+----------------+---------+------------+-------------------+---------+--------------+-----------+----------+
+```
+### 8. Obtener el nombre y cargo de todos los empleados, ordenados por salario de menor a mayor.
+```
+SELECT nombre, cargo_emp FROM empleados ORDER BY sal_emp  ASC;
++----------------+-----------------+
+| nombre         | cargo_emp       |
++----------------+-----------------+
+| Carlos Rozo    | Vigilante       |
+| Manuel Millán  | Vendedor        |
+| Julián Mora    | Vendedor        |
+| Jesús Alfonso  | Vendedor        |
+| Edith Muñoz    | Vendedor        |
+| Pedro Blanco   | Vendedor        |
+| Antonio Gil    | Técnico         |
+| Iván Duarte    | Mecánico        |
+| Abel Gómez     | Mecánico        |
+| Irene Díaz     | Mecánico        |
+| Ana Moreno     | Secretaria      |
+| José Giraldo   | Asesor          |
+| Carolina Ríos  | Secretaria      |
+| Diana Solarte  | Secretaria      |
+| William Daza   | Investigador    |
+| Joaquín Rosas  | Vendedor        |
+| Melissa Roa    | Vendedor        |
+| Mario Llano    | Vendedor        |
+| Marcos Cortez  | Mecánico        |
+| Elisa Rojas    | Jefe Mecánicos  |
+| Marisol Pulido | Investigador    |
+| Rosa Angulo    | Jefe Ventas     |
+| Carla López    | Jefe Mercadeo   |
+| Darío Casas    | Investigador    |
+| Luis Pérez     | Director        |
+| María Rojas    | Gerente         |
++----------------+-----------------+
+```
+### 9. Obtener el nombre de o de los jefes que tengan su departamento situado en la ciudad de “Ciudad Real”
+```
+SELECT nombre_jefe_depto FROM departamentos WHERE ciudad = "CIUDAD REAL";
++-------------------+
+| nombre_jefe_depto |
++-------------------+
+| Bruno Cebrian     |
+| Jesica Duran      |
+| Alicia Andres     |
+| Valentina Sola    |
+| Abraham Diego     |
+| Raúl Carrero      |
++-------------------+
+```
+### 10. Elabore un listado donde para cada fila, figure el alias ‘Nombre’ y ‘Cargo’ para las respectivas tablas de empleados.
+```
++----------------+-----------------+
+| Nombre         | Cargo           |
++----------------+-----------------+
+| Darío Casas    | Investigador    |
+| Diana Solarte  | Secretaria      |
+| Irene Díaz     | Mecánico        |
+| Rosa Angulo    | Jefe Ventas     |
+| Melissa Roa    | Vendedor        |
+| Carla López    | Jefe Mercadeo   |
+| José Giraldo   | Asesor          |
+| María Rojas    | Gerente         |
+| Carlos Rozo    | Vigilante       |
+| Pedro Blanco   | Vendedor        |
+| Marisol Pulido | Investigador    |
+| Ana Moreno     | Secretaria      |
+| Carolina Ríos  | Secretaria      |
+| Edith Muñoz    | Vendedor        |
+| Abel Gómez     | Mecánico        |
+| Elisa Rojas    | Jefe Mecánicos  |
+| Luis Pérez     | Director        |
+| Jesús Alfonso  | Vendedor        |
+| Julián Mora    | Vendedor        |
+| Manuel Millán  | Vendedor        |
+| Mario Llano    | Vendedor        |
+| Marcos Cortez  | Mecánico        |
+| Antonio Gil    | Técnico         |
+| Joaquín Rosas  | Vendedor        |
+| William Daza   | Investigador    |
+| Iván Duarte    | Mecánico        |
++----------------+-----------------+
 ```
