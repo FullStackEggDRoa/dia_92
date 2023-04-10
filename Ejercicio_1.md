@@ -34,7 +34,7 @@ SELECT * FROM empleados;
 |    898 | Iván Duarte    | M       | 1955-08-12 | 1998-05-16        | 1050000 |       200000 | Mecánico        |     4100 |
 +--------+----------------+---------+------------+-------------------+---------+--------------+-----------------+----------+
 ```
-###2. Obtener los datos completos de los departamentos.
+### 2. Obtener los datos completos de los departamentos.
 ```
 SELECT * FROM departamentos;
 +----------+----------------+-------------+-------------------+
@@ -54,5 +54,119 @@ SELECT * FROM departamentos;
 |     4300 | MANTENIMIENTO  | MADRID      | German Luna       |
 +----------+----------------+-------------+-------------------+
 ```
-### 3. 
-
+### 3. Listar el nombre de los departamentos.
+```
+SELECT nombre_depto  FROM departamentos;
++----------------+
+| nombre_depto   |
++----------------+
+| GERENCIA       |
+| PRODUCCIÓN     |
+| VENTAS         |
+| VENTAS         |
+| VENTAS         |
+| VENTAS         |
+| INVESTIGACIÓN  |
+| MERCADEO       |
+| MANTENIMIENTO  |
+| MANTENIMIENTO  |
+| MANTENIMIENTO  |
+| MANTENIMIENTO  |
++----------------+
+```
+### 4. Obtener el nombre y salario de todos los empleados.
+```
+SELECT nombre,sal_emp FROM empleados;
++----------------+---------+
+| nombre         | sal_emp |
++----------------+---------+
+| Darío Casas    | 4500000 |
+| Diana Solarte  | 1250000 |
+| Irene Díaz     | 1050000 |
+| Rosa Angulo    | 3250000 |
+| Melissa Roa    | 2250000 |
+| Carla López    | 4500000 |
+| José Giraldo   | 1200000 |
+| María Rojas    | 6250000 |
+| Carlos Rozo    |  750000 |
+| Pedro Blanco   |  800000 |
+| Marisol Pulido | 3250000 |
+| Ana Moreno     | 1200000 |
+| Carolina Ríos  | 1250000 |
+| Edith Muñoz    |  800000 |
+| Abel Gómez     | 1050000 |
+| Elisa Rojas    | 3000000 |
+| Luis Pérez     | 5050000 |
+| Jesús Alfonso  |  800000 |
+| Julián Mora    |  800000 |
+| Manuel Millán  |  800000 |
+| Mario Llano    | 2250000 |
+| Marcos Cortez  | 2550000 |
+| Antonio Gil    |  850000 |
+| Joaquín Rosas  | 2250000 |
+| William Daza   | 2250000 |
+| Iván Duarte    | 1050000 |
++----------------+---------+
+```
+5. Listar todas las comisiones.
+```
+SELECT comision_emp FROM empleados;
++--------------+
+| comision_emp |
++--------------+
+|       500000 |
+|       500000 |
+|       200000 |
+|      3500000 |
+|      2500000 |
+|       500000 |
+|       400000 |
+|      1500000 |
+|       500000 |
+|      3000000 |
+|      1000000 |
+|       400000 |
+|       500000 |
+|      3600000 |
+|       200000 |
+|      1000000 |
+|            0 |
+|      3500000 |
+|      3100000 |
+|      3700000 |
+|      2500000 |
+|       500000 |
+|      1500000 |
+|      2500000 |
+|      1000000 |
+|       200000 |
++--------------+
+```
+### 6. Obtener los datos de los empleados cuyo cargo sea ‘Secretaria’.
+```
+SELECT * FROM empleados WHERE cargo_emp = "Secretaria";
++--------+----------------+---------+------------+-------------------+---------+--------------+------------+----------+
+| id_emp | nombre         | sex_emp | fec_nac    | fec_incorporacion | sal_emp | comision_emp | cargo_emp  | id_depto |
++--------+----------------+---------+------------+-------------------+---------+--------------+------------+----------+
+|     99 | Diana Solarte  | F       | 1957-11-19 | 1990-05-16        | 1250000 |       500000 | Secretaria |     1000 |
+|    335 | Ana Moreno     | F       | 1992-01-05 | 2004-06-01        | 1200000 |       400000 | Secretaria |     3000 |
+|    336 | Carolina Ríos  | F       | 1992-02-15 | 2000-10-01        | 1250000 |       500000 | Secretaria |     1500 |
++--------+----------------+---------+------------+-------------------+---------+--------------+------------+----------+
+```
+### 7. Obtener los datos de los empleados vendedores, ordenados por nombre
+alfabéticamente.
+```
+SELECT * FROM empleados WHERE cargo_emp = "Vendedor" ORDER BY nombre ASC;
++--------+----------------+---------+------------+-------------------+---------+--------------+-----------+----------+
+| id_emp | nombre         | sex_emp | fec_nac    | fec_incorporacion | sal_emp | comision_emp | cargo_emp | id_depto |
++--------+----------------+---------+------------+-------------------+---------+--------------+-----------+----------+
+|    337 | Edith Muñoz    | F       | 1992-03-31 | 2000-10-01        |  800000 |      3600000 | Vendedor  |     2100 |
+|    444 | Jesús Alfonso  | M       | 1988-03-14 | 2000-10-01        |  800000 |      3500000 | Vendedor  |     2000 |
+|    785 | Joaquín Rosas  | M       | 1947-07-07 | 1990-05-16        | 2250000 |      2500000 | Vendedor  |     2200 |
+|    555 | Julián Mora    | M       | 1989-07-03 | 2000-10-01        |  800000 |      3100000 | Vendedor  |     2200 |
+|    666 | Manuel Millán  | M       | 1990-12-08 | 2004-06-01        |  800000 |      3700000 | Vendedor  |     2300 |
+|    689 | Mario Llano    | M       | 1945-08-30 | 1990-05-16        | 2250000 |      2500000 | Vendedor  |     2300 |
+|    219 | Melissa Roa    | F       | 1960-06-19 | 2001-03-16        | 2250000 |      2500000 | Vendedor  |     2100 |
+|    333 | Pedro Blanco   | M       | 1987-10-28 | 2000-10-01        |  800000 |      3000000 | Vendedor  |     2000 |
++--------+----------------+---------+------------+-------------------+---------+--------------+-----------+----------+
+```

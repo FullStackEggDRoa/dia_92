@@ -90,3 +90,5 @@ SELECT * FROM personajes ORDER BY inteligencia ASC;
 |           12 | Burce Wayne    | Batman           |          170 | 500      |        32 |    47 |      1939 | Hombre de Negocios      |          2 |
 +--------------+----------------+------------------+--------------+----------+-----------+-------+-----------+-------------------------+------------+
 ```
+## Ejercicio 1
+Link: https://gitlab.com/fullstack_egg_droa/dia_92/-/blob/main/Ejercicio_1.md
