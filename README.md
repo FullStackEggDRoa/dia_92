@@ -91,4 +91,4 @@ SELECT * FROM personajes ORDER BY inteligencia ASC;
 +--------------+----------------+------------------+--------------+----------+-----------+-------+-----------+-------------------------+------------+
 ```
 ## Ejercicio 1
-Link: https://gitlab.com/fullstack_egg_droa/dia_92/-/blob/main/Ejercicio_1.md
+Link: https://github.com/FullStackEggDRoa/dia_92/blob/main/Ejercicio_1.md
