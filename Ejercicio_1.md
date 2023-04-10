@@ -219,6 +219,7 @@ SELECT nombre_jefe_depto FROM departamentos WHERE ciudad = "CIUDAD REAL";
 ```
 ### 10. Elabore un listado donde para cada fila, figure el alias ‘Nombre’ y ‘Cargo’ para las respectivas tablas de empleados.
 ```
+SELECT nombre AS Nombre, cargo_emp AS Cargo FROM empleados;
 +----------------+-----------------+
 | Nombre         | Cargo           |
 +----------------+-----------------+
