@@ -251,7 +251,7 @@ SELECT nombre AS Nombre, cargo_emp AS Cargo FROM empleados;
 | Iván Duarte    | Mecánico        |
 +----------------+-----------------+
 ```
-11. Listar los salarios y comisiones de los empleados del departamento 2000, ordenado por comisión de menor a mayor.
+### 11. Listar los salarios y comisiones de los empleados del departamento 2000, ordenado por comisión de menor a mayor.
 ```
 SELECT sal_emp, comision_emp FROM empleados WHERE id_depto=2000 ORDER BY comision_emp ASC;
 +---------+--------------+
@@ -262,7 +262,7 @@ SELECT sal_emp, comision_emp FROM empleados WHERE id_depto=2000 ORDER BY comisio
 |  800000 |      3500000 |
 +---------+--------------+
 ```
-12. Obtener el valor total a pagar a cada empleado del departamento 3000, que resulta de: sumar el salario y la comisión, más una bonificación de 500. Mostrar el nombre del empleado y el total a pagar, en orden alfabético.
+### 12. Obtener el valor total a pagar a cada empleado del departamento 3000, que resulta de: sumar el salario y la comisión, más una bonificación de 500. Mostrar el nombre del empleado y el total a pagar, en orden alfabético.
 ```
 SELECT nombre AS "Nombre Empleado", sal_emp+comision_emp+500 AS "Total a Pagar" FROM empleados WHERE id_depto=3000 ORDER BY nombre ASC;
 +-----------------+---------------+
@@ -274,7 +274,7 @@ SELECT nombre AS "Nombre Empleado", sal_emp+comision_emp+500 AS "Total a Pagar" 
 | William Daza    |       3250500 |
 +-----------------+---------------+
 ```
-13. Muestra los empleados cuyo nombre empiece con la letra J.
+### 13. Muestra los empleados cuyo nombre empiece con la letra J.
 ```
 SELECT nombre AS "Nombre Empleados[J]" FROM empleados WHERE nombre LIKE 'J%';
 +---------------------+
@@ -286,7 +286,7 @@ SELECT nombre AS "Nombre Empleados[J]" FROM empleados WHERE nombre LIKE 'J%';
 | Joaquín Rosas       |
 +---------------------+
 ```
-14. Listar el salario, la comisión, el salario total (salario + comisión) y nombre, de aquellos empleados que tienen comisión superior a 1000.
+### 14. Listar el salario, la comisión, el salario total (salario + comisión) y nombre, de aquellos empleados que tienen comisión superior a 1000.
 ```
 SELECT  sal_emp AS "Salario", comision_emp "Comision", (sal_emp + comision_emp) AS "Salario Total", nombre AS "Nombre Empleado" FROM empleados WHERE comision_emp > 1000;
 +---------+----------+---------------+-----------------+
@@ -319,7 +319,7 @@ SELECT  sal_emp AS "Salario", comision_emp "Comision", (sal_emp + comision_emp) 
 | 1050000 |   200000 |       1250000 | Iván Duarte     |
 +---------+----------+---------------+-----------------+
 ```
-15. Obtener un listado similar al anterior, pero de aquellos empleados que NO tienen comisión.
+### 15. Obtener un listado similar al anterior, pero de aquellos empleados que NO tienen comisión.
 ```
 SELECT  sal_emp AS "Salario", comision_emp "Comision", (sal_emp + comision_emp) AS "Salario Total", nombre AS "Nombre Empleado" FROM empleados WHERE comision_emp = 0;
 +---------+----------+---------------+-----------------+
@@ -328,7 +328,7 @@ SELECT  sal_emp AS "Salario", comision_emp "Comision", (sal_emp + comision_emp) 
 | 5050000 |        0 |       5050000 | Luis Pérez      |
 +---------+----------+---------------+-----------------+
 ```
-16. Obtener la lista de los empleados que ganan una comisión superior a su sueldo.
+### 16. Obtener la lista de los empleados que ganan una comisión superior a su sueldo.
 ```
 SELECT nombre AS "Nombre Empleados" FROM empleados WHERE comision_emp > sal_emp;
 +------------------+
@@ -346,7 +346,7 @@ SELECT nombre AS "Nombre Empleados" FROM empleados WHERE comision_emp > sal_emp;
 | Joaquín Rosas    |
 +------------------+
 ```
-17. Listar los empleados cuya comisión es menor o igual que el 30% de su sueldo.
+### 17. Listar los empleados cuya comisión es menor o igual que el 30% de su sueldo.
 ```
 SELECT nombre AS "Nombre Empleados", comision_emp, sal_emp from empleados WHERE comision_emp <= (sal_emp * 0.3);
 +------------------+--------------+---------+
@@ -362,7 +362,7 @@ SELECT nombre AS "Nombre Empleados", comision_emp, sal_emp from empleados WHERE 
 | Iván Duarte      |       200000 | 1050000 |
 +------------------+--------------+---------+
 ```
-18. Hallar los empleados cuyo nombre no contiene la cadena “MA”
+### 18. Hallar los empleados cuyo nombre no contiene la cadena “MA”
 ```
 SELECT nombre AS "Nombre Empleado" FROM empleados WHERE nombre NOT LIKE '%MA%';
 +-----------------+
@@ -391,7 +391,7 @@ SELECT nombre AS "Nombre Empleado" FROM empleados WHERE nombre NOT LIKE '%MA%';
 | Iván Duarte     |
 +-----------------+
 ```
-19. Obtener los nombres de los departamentos que sean “Ventas”, “Investigación” o ‘Mantenimiento.
+### 19. Obtener los nombres de los departamentos que sean “Ventas”, “Investigación” o ‘Mantenimiento.
 ```
 SELECT id_depto,  nombre_depto AS "Nombre Departamento" FROM departamentos WHERE nombre_depto  IN ("Ventas","Investigación","Mantenimiento");
 +----------+---------------------+
@@ -408,7 +408,7 @@ SELECT id_depto,  nombre_depto AS "Nombre Departamento" FROM departamentos WHERE
 |     4300 | MANTENIMIENTO       |
 +----------+---------------------+
 ```
-20. Ahora obtener el contrario, los nombres de los departamentos que no sean “Ventas” ni “Investigación” ni ‘Mantenimiento.
+### 20. Ahora obtener el contrario, los nombres de los departamentos que no sean “Ventas” ni “Investigación” ni ‘Mantenimiento.
 ```
 SELECT id_depto,  nombre_depto AS "Nombre Departamento" FROM departamentos WHERE nombre_depto NOT IN ("Ventas","Investigación","Mantenimiento");
 +----------+---------------------+
@@ -419,7 +419,7 @@ SELECT id_depto,  nombre_depto AS "Nombre Departamento" FROM departamentos WHERE
 |     3500 | MERCADEO            |
 +----------+---------------------+
 ```
-21. Mostrar el salario más alto de la empresa.
+### 21. Mostrar el salario más alto de la empresa.
 ```
 SELECT MAX(sal_emp) AS "Salario Máximo" FROM empleados;
 +-----------------+
@@ -428,7 +428,7 @@ SELECT MAX(sal_emp) AS "Salario Máximo" FROM empleados;
 |         6250000 |
 +-----------------+
 ```
-22. Mostrar el nombre del último empleado de la lista por orden alfabético.
+### 22. Mostrar el nombre del último empleado de la lista por orden alfabético.
 ```
 SELECT nombre AS "Nombre Empleado" FROM empleados ORDER BY nombre DESC LIMIT 1;
 +-----------------+
@@ -437,7 +437,7 @@ SELECT nombre AS "Nombre Empleado" FROM empleados ORDER BY nombre DESC LIMIT 1;
 | William Daza    |
 +-----------------+
 ```
-23. Hallar el salario más alto, el más bajo y la diferencia entre ellos.
+### 23. Hallar el salario más alto, el más bajo y la diferencia entre ellos.
 ```
 SELECT MAX(sal_emp) AS "Salario Máximo", MIN(sal_emp) AS "Salario Mínimo", MAX(sal_emp)-MIN(sal_emp) AS "Diferencia" FROM empleados;
 +-----------------+-----------------+------------+
@@ -446,7 +446,7 @@ SELECT MAX(sal_emp) AS "Salario Máximo", MIN(sal_emp) AS "Salario Mínimo", MAX
 |         6250000 |          750000 |    5500000 |
 +-----------------+-----------------+------------+
 ```
-24. Hallar el salario promedio por departamento.
+### 24. Hallar el salario promedio por departamento.
 ```
 SELECT nombre_depto AS "Nombre Departamento",AVG(sal_emp) AS "Salario Promedio"  FROM empleados INNER JOIN departamentos ON empleados.id_depto= departamentos.id_depto GROUP BY nombre_depto;
 +---------------------+--------------------+
@@ -460,7 +460,7 @@ SELECT nombre_depto AS "Nombre Departamento",AVG(sal_emp) AS "Salario Promedio" 
 | MANTENIMIENTO       |            1740000 |
 +---------------------+--------------------+
 ```
-25. Hallar los departamentos que tienen más de tres empleados. Mostrar el número de empleados de esos departamentos.
+### 25. Hallar los departamentos que tienen más de tres empleados. Mostrar el número de empleados de esos departamentos.
 ```
 SELECT nombre_depto AS "Nombre Departamento",COUNT(id_emp) AS "Numero de Empleados"  FROM empleados INNER JOIN departamentos ON empleados.id_depto= departamentos.id_depto GROUP BY nombre_depto HAVING COUNT(id_emp)>3;
 +---------------------+---------------------+
@@ -471,8 +471,62 @@ SELECT nombre_depto AS "Nombre Departamento",COUNT(id_emp) AS "Numero de Emplead
 | MANTENIMIENTO       |                   5 |
 +---------------------+---------------------+
 ```
-26. Hallar los departamentos que no tienen empleados
+### 26. Hallar los departamentos que no tienen empleados
 ```
 SELECT nombre_depto AS "Nombre Departamento",COUNT(id_emp) AS "Numero de Empleados"  FROM empleados INNER JOIN departamentos ON empleados.id_depto= departamentos.id_depto GROUP BY nombre_depto HAVING COUNT(id_emp)=0;
 Empty set
+```
+### 27. Mostrar la lista de empleados, con su respectivo departamento y el jefe de cada departamento.
+```
+SELECT nombre AS "Nombre Empleado", nombre_depto AS "Nombre Departamento", nombre_jefe_depto  AS "Jefe Departamento" FROM empleados INNER JOIN departamentos ON empleados.id_depto= departamentos.id_depto;
++-----------------+---------------------+-------------------+
+| Nombre Empleado | Nombre Departamento | Jefe Departamento |
++-----------------+---------------------+-------------------+
+| Diana Solarte   | GERENCIA            | Bruno Cebrian     |
+| María Rojas     | GERENCIA            | Bruno Cebrian     |
+| Carolina Ríos   | PRODUCCIÓN          | Jesica Duran      |
+| Luis Pérez      | PRODUCCIÓN          | Jesica Duran      |
+| Antonio Gil     | PRODUCCIÓN          | Jesica Duran      |
+| Rosa Angulo     | VENTAS              | Alicia Andres     |
+| Pedro Blanco    | VENTAS              | Alicia Andres     |
+| Jesús Alfonso   | VENTAS              | Alicia Andres     |
+| Melissa Roa     | VENTAS              | Fabian Soto       |
+| Edith Muñoz     | VENTAS              | Fabian Soto       |
+| Julián Mora     | VENTAS              | Mari Plaza        |
+| Joaquín Rosas   | VENTAS              | Mari Plaza        |
+| Manuel Millán   | VENTAS              | Jonatan Acuña     |
+| Mario Llano     | VENTAS              | Jonatan Acuña     |
+| Darío Casas     | INVESTIGACIÓN       | Valentina Sola    |
+| Marisol Pulido  | INVESTIGACIÓN       | Valentina Sola    |
+| Ana Moreno      | INVESTIGACIÓN       | Valentina Sola    |
+| William Daza    | INVESTIGACIÓN       | Valentina Sola    |
+| Carla López     | MERCADEO            | Abraham Diego     |
+| José Giraldo    | MERCADEO            | Abraham Diego     |
+| Carlos Rozo     | MERCADEO            | Abraham Diego     |
+| Elisa Rojas     | MANTENIMIENTO       | Raúl Carrero      |
+| Marcos Cortez   | MANTENIMIENTO       | Raúl Carrero      |
+| Iván Duarte     | MANTENIMIENTO       | Catalina Valdes   |
+| Irene Díaz      | MANTENIMIENTO       | Adriana Rocha     |
+| Abel Gómez      | MANTENIMIENTO       | German Luna       |
++-----------------+---------------------+-------------------+
+```
+### 28. Mostrar la lista de los empleados cuyo salario es mayor o igual que el promedio de la empresa. Ordenarlo por departamento.
+```
+SELECT nombre AS "Nombre Empleado", nombre_depto AS "Nombre Departamento" FROM empleados INNER JOIN departamentos ON empleados.id_depto=departamentos.id_depto WHERE sal_emp > (SELECT AVG(sal_emp) FROM empleados) ORDER BY nombre_depto;
++-----------------+---------------------+
+| Nombre Empleado | Nombre Departamento |
++-----------------+---------------------+
+| María Rojas     | GERENCIA            |
+| Darío Casas     | INVESTIGACIÓN       |
+| Marisol Pulido  | INVESTIGACIÓN       |
+| William Daza    | INVESTIGACIÓN       |
+| Elisa Rojas     | MANTENIMIENTO       |
+| Marcos Cortez   | MANTENIMIENTO       |
+| Carla López     | MERCADEO            |
+| Luis Pérez      | PRODUCCIÓN          |
+| Rosa Angulo     | VENTAS              |
+| Melissa Roa     | VENTAS              |
+| Mario Llano     | VENTAS              |
+| Joaquín Rosas   | VENTAS              |
++-----------------+---------------------+
 ```
