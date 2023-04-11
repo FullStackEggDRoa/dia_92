@@ -264,13 +264,58 @@ SELECT sal_emp, comision_emp FROM empleados WHERE id_depto=2000 ORDER BY comisio
 ```
 12. Obtener el valor total a pagar a cada empleado del departamento 3000, que resulta de: sumar el salario y la comisión, más una bonificación de 500. Mostrar el nombre del empleado y el total a pagar, en orden alfabético.
 ```
-SELECT nombre AS "Nombre Empleado", sal_emp+comision_emp+500 AS "Total a Pagar" FROM empleados WHERE id_depto=3000;
+SELECT nombre AS "Nombre Empleado", sal_emp+comision_emp+500 AS "Total a Pagar" FROM empleados WHERE id_depto=3000 ORDER BY nombre ASC;
 +-----------------+---------------+
 | Nombre Empleado | Total a Pagar |
 +-----------------+---------------+
+| Ana Moreno      |       1600500 |
 | Darío Casas     |       5000500 |
 | Marisol Pulido  |       4250500 |
-| Ana Moreno      |       1600500 |
 | William Daza    |       3250500 |
 +-----------------+---------------+
+```
+13. Muestra los empleados cuyo nombre empiece con la letra J.
+```
+SELECT nombre AS "Nombre Empleados[J]" FROM empleados WHERE nombre LIKE 'J%';
++---------------------+
+| Nombre Empleados[J] |
++---------------------+
+| José Giraldo        |
+| Jesús Alfonso       |
+| Julián Mora         |
+| Joaquín Rosas       |
++---------------------+
+```
+14. Listar el salario, la comisión, el salario total (salario + comisión) y nombre, de aquellos empleados que tienen comisión superior a 1000.
+```
+SELECT  sal_emp AS "Salario", comision_emp "Comision", (sal_emp + comision_emp) AS "Salario Total", nombre AS "Nombre Empleado" FROM empleados WHERE comision_emp > 1000;
++---------+----------+---------------+-----------------+
+| Salario | Comision | Salario Total | Nombre Empleado |
++---------+----------+---------------+-----------------+
+| 4500000 |   500000 |       5000000 | Darío Casas     |
+| 1250000 |   500000 |       1750000 | Diana Solarte   |
+| 1050000 |   200000 |       1250000 | Irene Díaz      |
+| 3250000 |  3500000 |       6750000 | Rosa Angulo     |
+| 2250000 |  2500000 |       4750000 | Melissa Roa     |
+| 4500000 |   500000 |       5000000 | Carla López     |
+| 1200000 |   400000 |       1600000 | José Giraldo    |
+| 6250000 |  1500000 |       7750000 | María Rojas     |
+|  750000 |   500000 |       1250000 | Carlos Rozo     |
+|  800000 |  3000000 |       3800000 | Pedro Blanco    |
+| 3250000 |  1000000 |       4250000 | Marisol Pulido  |
+| 1200000 |   400000 |       1600000 | Ana Moreno      |
+| 1250000 |   500000 |       1750000 | Carolina Ríos   |
+|  800000 |  3600000 |       4400000 | Edith Muñoz     |
+| 1050000 |   200000 |       1250000 | Abel Gómez      |
+| 3000000 |  1000000 |       4000000 | Elisa Rojas     |
+|  800000 |  3500000 |       4300000 | Jesús Alfonso   |
+|  800000 |  3100000 |       3900000 | Julián Mora     |
+|  800000 |  3700000 |       4500000 | Manuel Millán   |
+| 2250000 |  2500000 |       4750000 | Mario Llano     |
+| 2550000 |   500000 |       3050000 | Marcos Cortez   |
+|  850000 |  1500000 |       2350000 | Antonio Gil     |
+| 2250000 |  2500000 |       4750000 | Joaquín Rosas   |
+| 2250000 |  1000000 |       3250000 | William Daza    |
+| 1050000 |   200000 |       1250000 | Iván Duarte     |
++---------+----------+---------------+-----------------+
 ```
