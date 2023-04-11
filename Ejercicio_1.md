@@ -460,3 +460,19 @@ SELECT nombre_depto AS "Nombre Departamento",AVG(sal_emp) AS "Salario Promedio" 
 | MANTENIMIENTO       |            1740000 |
 +---------------------+--------------------+
 ```
+25. Hallar los departamentos que tienen más de tres empleados. Mostrar el número de empleados de esos departamentos.
+```
+SELECT nombre_depto AS "Nombre Departamento",COUNT(id_emp) AS "Numero de Empleados"  FROM empleados INNER JOIN departamentos ON empleados.id_depto= departamentos.id_depto GROUP BY nombre_depto HAVING COUNT(id_emp)>3;
++---------------------+---------------------+
+| Nombre Departamento | Numero de Empleados |
++---------------------+---------------------+
+| VENTAS              |                   9 |
+| INVESTIGACIÓN       |                   4 |
+| MANTENIMIENTO       |                   5 |
++---------------------+---------------------+
+```
+26. Hallar los departamentos que no tienen empleados
+```
+SELECT nombre_depto AS "Nombre Departamento",COUNT(id_emp) AS "Numero de Empleados"  FROM empleados INNER JOIN departamentos ON empleados.id_depto= departamentos.id_depto GROUP BY nombre_depto HAVING COUNT(id_emp)=0;
+Empty set
+```
