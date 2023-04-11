@@ -407,7 +407,6 @@ SELECT id_depto,  nombre_depto AS "Nombre Departamento" FROM departamentos WHERE
 |     4200 | MANTENIMIENTO       |
 |     4300 | MANTENIMIENTO       |
 +----------+---------------------+
-9 rows in set (0,00 sec)
 ```
 20. Ahora obtener el contrario, los nombres de los departamentos que no sean “Ventas” ni “Investigación” ni ‘Mantenimiento.
 ```
@@ -419,4 +418,45 @@ SELECT id_depto,  nombre_depto AS "Nombre Departamento" FROM departamentos WHERE
 |     1500 | PRODUCCIÓN          |
 |     3500 | MERCADEO            |
 +----------+---------------------+
+```
+21. Mostrar el salario más alto de la empresa.
+```
+SELECT MAX(sal_emp) AS "Salario Máximo" FROM empleados;
++-----------------+
+| Salario Máximo  |
++-----------------+
+|         6250000 |
++-----------------+
+```
+22. Mostrar el nombre del último empleado de la lista por orden alfabético.
+```
+SELECT nombre AS "Nombre Empleado" FROM empleados ORDER BY nombre DESC LIMIT 1;
++-----------------+
+| Nombre Empleado |
++-----------------+
+| William Daza    |
++-----------------+
+```
+23. Hallar el salario más alto, el más bajo y la diferencia entre ellos.
+```
+SELECT MAX(sal_emp) AS "Salario Máximo", MIN(sal_emp) AS "Salario Mínimo", MAX(sal_emp)-MIN(sal_emp) AS "Diferencia" FROM empleados;
++-----------------+-----------------+------------+
+| Salario Máximo  | Salario Mínimo  | Diferencia |
++-----------------+-----------------+------------+
+|         6250000 |          750000 |    5500000 |
++-----------------+-----------------+------------+
+```
+24. Hallar el salario promedio por departamento.
+```
+SELECT nombre_depto AS "Nombre Departamento",AVG(sal_emp) AS "Salario Promedio"  FROM empleados INNER JOIN departamentos ON empleados.id_depto= departamentos.id_depto GROUP BY nombre_depto;
++---------------------+--------------------+
+| Nombre Departamento | Salario Promedio   |
++---------------------+--------------------+
+| GERENCIA            |            3750000 |
+| PRODUCCIÓN          | 2383333.3333333335 |
+| VENTAS              | 1555555.5555555555 |
+| INVESTIGACIÓN       |            2800000 |
+| MERCADEO            |            2150000 |
+| MANTENIMIENTO       |            1740000 |
++---------------------+--------------------+
 ```
