@@ -319,3 +319,46 @@ SELECT  sal_emp AS "Salario", comision_emp "Comision", (sal_emp + comision_emp) 
 | 1050000 |   200000 |       1250000 | Iván Duarte     |
 +---------+----------+---------------+-----------------+
 ```
+15. Obtener un listado similar al anterior, pero de aquellos empleados que NO tienen comisión.
+```
+SELECT  sal_emp AS "Salario", comision_emp "Comision", (sal_emp + comision_emp) AS "Salario Total", nombre AS "Nombre Empleado" FROM empleados WHERE comision_emp = 0;
++---------+----------+---------------+-----------------+
+| Salario | Comision | Salario Total | Nombre Empleado |
++---------+----------+---------------+-----------------+
+| 5050000 |        0 |       5050000 | Luis Pérez      |
++---------+----------+---------------+-----------------+
+```
+16. Obtener la lista de los empleados que ganan una comisión superior a su sueldo.
+```
+SELECT nombre AS "Nombre Empleados" FROM empleados WHERE comision_emp > sal_emp;
++------------------+
+| Nombre Empleados |
++------------------+
+| Rosa Angulo      |
+| Melissa Roa      |
+| Pedro Blanco     |
+| Edith Muñoz      |
+| Jesús Alfonso    |
+| Julián Mora      |
+| Manuel Millán    |
+| Mario Llano      |
+| Antonio Gil      |
+| Joaquín Rosas    |
++------------------+
+```
+17. Listar los empleados cuya comisión es menor o igual que el 30% de su sueldo.
+```
+SELECT nombre AS "Nombre Empleados", comision_emp, sal_emp from empleados WHERE comision_emp <= (sal_emp * 0.3);
++------------------+--------------+---------+
+| Nombre Empleados | comision_emp | sal_emp |
++------------------+--------------+---------+
+| Darío Casas      |       500000 | 4500000 |
+| Irene Díaz       |       200000 | 1050000 |
+| Carla López      |       500000 | 4500000 |
+| María Rojas      |      1500000 | 6250000 |
+| Abel Gómez       |       200000 | 1050000 |
+| Luis Pérez       |            0 | 5050000 |
+| Marcos Cortez    |       500000 | 2550000 |
+| Iván Duarte      |       200000 | 1050000 |
++------------------+--------------+---------+
+```
