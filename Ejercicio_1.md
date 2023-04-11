@@ -362,3 +362,61 @@ SELECT nombre AS "Nombre Empleados", comision_emp, sal_emp from empleados WHERE 
 | Iván Duarte      |       200000 | 1050000 |
 +------------------+--------------+---------+
 ```
+18. Hallar los empleados cuyo nombre no contiene la cadena “MA”
+```
+SELECT nombre AS "Nombre Empleado" FROM empleados WHERE nombre NOT LIKE '%MA%';
++-----------------+
+| Nombre Empleado |
++-----------------+
+| Darío Casas     |
+| Diana Solarte   |
+| Irene Díaz      |
+| Rosa Angulo     |
+| Melissa Roa     |
+| Carla López     |
+| José Giraldo    |
+| Carlos Rozo     |
+| Pedro Blanco    |
+| Ana Moreno      |
+| Carolina Ríos   |
+| Edith Muñoz     |
+| Abel Gómez      |
+| Elisa Rojas     |
+| Luis Pérez      |
+| Jesús Alfonso   |
+| Julián Mora     |
+| Antonio Gil     |
+| Joaquín Rosas   |
+| William Daza    |
+| Iván Duarte     |
++-----------------+
+```
+19. Obtener los nombres de los departamentos que sean “Ventas”, “Investigación” o ‘Mantenimiento.
+```
+SELECT id_depto,  nombre_depto AS "Nombre Departamento" FROM departamentos WHERE nombre_depto  IN ("Ventas","Investigación","Mantenimiento");
++----------+---------------------+
+| id_depto | Nombre Departamento |
++----------+---------------------+
+|     2000 | VENTAS              |
+|     2100 | VENTAS              |
+|     2200 | VENTAS              |
+|     2300 | VENTAS              |
+|     3000 | INVESTIGACIÓN       |
+|     4000 | MANTENIMIENTO       |
+|     4100 | MANTENIMIENTO       |
+|     4200 | MANTENIMIENTO       |
+|     4300 | MANTENIMIENTO       |
++----------+---------------------+
+9 rows in set (0,00 sec)
+```
+20. Ahora obtener el contrario, los nombres de los departamentos que no sean “Ventas” ni “Investigación” ni ‘Mantenimiento.
+```
+SELECT id_depto,  nombre_depto AS "Nombre Departamento" FROM departamentos WHERE nombre_depto NOT IN ("Ventas","Investigación","Mantenimiento");
++----------+---------------------+
+| id_depto | Nombre Departamento |
++----------+---------------------+
+|     1000 | GERENCIA            |
+|     1500 | PRODUCCIÓN          |
+|     3500 | MERCADEO            |
++----------+---------------------+
+```
