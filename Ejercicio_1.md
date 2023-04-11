@@ -251,3 +251,26 @@ SELECT nombre AS Nombre, cargo_emp AS Cargo FROM empleados;
 | Iván Duarte    | Mecánico        |
 +----------------+-----------------+
 ```
+11. Listar los salarios y comisiones de los empleados del departamento 2000, ordenado por comisión de menor a mayor.
+```
+SELECT sal_emp, comision_emp FROM empleados WHERE id_depto=2000 ORDER BY comision_emp ASC;
++---------+--------------+
+| sal_emp | comision_emp |
++---------+--------------+
+|  800000 |      3000000 |
+| 3250000 |      3500000 |
+|  800000 |      3500000 |
++---------+--------------+
+```
+12. Obtener el valor total a pagar a cada empleado del departamento 3000, que resulta de: sumar el salario y la comisión, más una bonificación de 500. Mostrar el nombre del empleado y el total a pagar, en orden alfabético.
+```
+SELECT nombre AS "Nombre Empleado", sal_emp+comision_emp+500 AS "Total a Pagar" FROM empleados WHERE id_depto=3000;
++-----------------+---------------+
+| Nombre Empleado | Total a Pagar |
++-----------------+---------------+
+| Darío Casas     |       5000500 |
+| Marisol Pulido  |       4250500 |
+| Ana Moreno      |       1600500 |
+| William Daza    |       3250500 |
++-----------------+---------------+
+```
